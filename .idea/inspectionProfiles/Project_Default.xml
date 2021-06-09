@@ -1,0 +1,48 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="27">
+            <item index="0" class="java.lang.String" itemvalue="altgraph" />
+            <item index="1" class="java.lang.String" itemvalue="google-pasta" />
+            <item index="2" class="java.lang.String" itemvalue="bs4" />
+            <item index="3" class="java.lang.String" itemvalue="html5lib" />
+            <item index="4" class="java.lang.String" itemvalue="pybithumb" />
+            <item index="5" class="java.lang.String" itemvalue="sklearn" />
+            <item index="6" class="java.lang.String" itemvalue="gast" />
+            <item index="7" class="java.lang.String" itemvalue="DateTime" />
+            <item index="8" class="java.lang.String" itemvalue="Keras-Preprocessing" />
+            <item index="9" class="java.lang.String" itemvalue="pynput" />
+            <item index="10" class="java.lang.String" itemvalue="tensorflow" />
+            <item index="11" class="java.lang.String" itemvalue="seaborn" />
+            <item index="12" class="java.lang.String" itemvalue="PyQt5" />
+            <item index="13" class="java.lang.String" itemvalue="astunparse" />
+            <item index="14" class="java.lang.String" itemvalue="cached-property" />
+            <item index="15" class="java.lang.String" itemvalue="PyAutoGUI" />
+            <item index="16" class="java.lang.String" itemvalue="pyinstaller" />
+            <item index="17" class="java.lang.String" itemvalue="pywin32" />
+            <item index="18" class="java.lang.String" itemvalue="keyboard" />
+            <item index="19" class="java.lang.String" itemvalue="dataclasses" />
+            <item index="20" class="java.lang.String" itemvalue="h5py" />
+            <item index="21" class="java.lang.String" itemvalue="attrs" />
+            <item index="22" class="java.lang.String" itemvalue="pyupbit" />
+            <item index="23" class="java.lang.String" itemvalue="flatbuffers" />
+            <item index="24" class="java.lang.String" itemvalue="mediapipe" />
+            <item index="25" class="java.lang.String" itemvalue="matplotlib" />
+            <item index="26" class="java.lang.String" itemvalue="Keras" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N806" />
+          <option value="N801" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

@@ -3,6 +3,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# 동영상 파일 제외
+*.mp4
+*.avi
+
 # C extensions
 *.so
 
