@@ -7,12 +7,20 @@ import matplotlib.pyplot as plt
 print(tf.__version__)
 
 df = pd.read_csv("./video_output/output_sum_63.csv")
+
 df = df[1:]
 print(df.tail())
+
+for i in range(20):
+    for j in range(3):
+        print()
+        df[str(3*i + j)] = df[str(3*i + j)] - df[str(j)]
+
 size = df.shape[0]
 print(size, "num of data")
 
 df = df.sample(frac=1).reset_index(drop=True) #shuffle
+
 
 test_ratio = 0.2
 test_num = int(size - size * test_ratio)
@@ -51,6 +59,8 @@ model = keras.Sequential([
     keras.layers.Dropout(0.2),
     keras.layers.Dense(60, activation='relu'),
     keras.layers.Dropout(0.2),
+    keras.layers.Dense(60, activation='relu'),
+    keras.layers.Dropout(0.2),
     #keras.layers.Dense(30, activation = 'relu'),
     keras.layers.Dense(32, activation='softmax')
 ])
@@ -61,7 +71,7 @@ model.compile(optimizer='adam',
 
 from keras.callbacks import EarlyStopping, ModelCheckpoint
 early_stop = EarlyStopping(monitor='val_loss', patience=5)
-filename = 'model_save/my_model_18.h5'
+filename = 'model_save/my_model_63.h5'
 checkpoint = ModelCheckpoint(filename, monitor='val_loss', verbose=1, save_best_only=True, mode='auto')
 
 hist = model.fit(train_x, train_y, epochs=100, batch_size=10, validation_data=(valid_x, valid_y),
