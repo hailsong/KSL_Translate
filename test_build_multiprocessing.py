@@ -5,7 +5,7 @@ import time
 
 path=os.getcwd()
 
-FOLDER_NAME = 'data_1/'
+FOLDER_NAME = 'data_2/'
 
 split_list = FOLDER_NAME.split('/')
 dir_1 = split_list[0]
@@ -19,7 +19,7 @@ for i in range(63):
     column_name.append(str(i))
 
 if not(os.path.isdir("./video_output/" + dir_1)):
-    os.makedirs(os.path.join("../video_output/" + dir_1 + "/"))
+    os.makedirs(os.path.join("./video_output/" + dir_1 + "/"))
 
 if not os.path.isdir("./video_output/" + dir_1 + "/" + dir_2):
     print("./video_output/" + dir_1 + "/" + dir_2 + "/")
@@ -46,7 +46,7 @@ if __name__ == '__main__':
 
     if os.path.isfile("./video_output/csv_list_63.txt"):
         txt = open("./video_output/csv_list_63.txt", 'a')
-        data = FOLDER_NAME + "output_63.csv\n"
+        data = FOLDER_NAME + str(i) + ".csv\n"
         txt.write(data)
 
 

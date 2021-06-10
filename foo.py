@@ -1,2 +1,2 @@
 for i in range(33):
-    print('data_1/'+str(i)+'.csv')
+    print('data_2/'+str(i)+'.csv')
