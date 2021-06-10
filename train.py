@@ -3,6 +3,7 @@ import numpy as np
 import tensorflow as tf
 from tensorflow import keras
 import matplotlib.pyplot as plt
+import seaborn as sn
 
 print(tf.__version__)
 
@@ -70,7 +71,7 @@ model.compile(optimizer='adam',
               metrics=['accuracy'])
 
 from keras.callbacks import EarlyStopping, ModelCheckpoint
-early_stop = EarlyStopping(monitor='val_loss', patience=5)
+early_stop = EarlyStopping(monitor='val_loss', patience=7)
 filename = 'model_save/my_model_63.h5'
 checkpoint = ModelCheckpoint(filename, monitor='val_loss', verbose=1, save_best_only=True, mode='auto')
 
@@ -85,6 +86,22 @@ prediction = model.predict(test_x[[5]])
 print(prediction[0])
 print(test_y[5])
 
+from sklearn.metrics import confusion_matrix
+# 한글 폰트 사용을 위해서 세팅
+from matplotlib import font_manager, rc
+font_path = "C:/Windows/Fonts/NGULIM.TTF"
+font = font_manager.FontProperties(fname=font_path).get_name()
+rc('font', family=font)
+
+predictions = model.predict(test_x)
+pred_y = (predictions > 0.5)
+print(pred_y.shape)
+print(test_y.shape)
+matrix = confusion_matrix(test_y, pred_y.argmax(axis=1))
+df_cm = pd.DataFrame(matrix, index = [i for i in "Xㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎㅏㅑㅓㅕㅗㅛㅜㅠㅡㅣㅐㅒㅔㅖㅢㅚㅟ"],
+                  columns = [i for i in "Xㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎㅏㅑㅓㅕㅗㅛㅜㅠㅡㅣㅐㅒㅔㅖㅢㅚㅟ"])
+plt.figure(figsize = (10,7))
+sn.heatmap(df_cm, annot=True)
 
 fig, loss_ax = plt.subplots()
 
